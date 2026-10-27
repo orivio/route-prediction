@@ -1,4 +1,5 @@
 import pygame
+from math import dist
 
 pygame.init()
 
@@ -11,6 +12,21 @@ locations = {
     "E": (650, 480),
     "F": (250, 500)
 }
+
+def distance(a, b):
+    temp1, temp2 = 0, 0
+    for loc in locations:
+        if a == loc:
+            temp1 = loc
+        elif b == loc:
+            temp2 = loc
+    return dist(temp1, temp2)
+
+def route_distance(route):
+    total = 0
+    for i in range(0, len(route)):
+        total += distance(route[i], route[i+1])
+    return total
 
 route = ["HOME"]
 
