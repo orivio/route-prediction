@@ -46,7 +46,7 @@ while gameloop:
 
     for place in locations:
         val = locations[place]
-        pygame.draw.rect(screen, (255, 255, 255), (val[0] - 50, val[1] - 50, val[0] + 50, val[1] + 50))
+        pygame.draw.rect(screen, (255, 255, 255), (val[0], val[1], 50, 50))
 
     clock.tick(30)
     if pygame.time.get_ticks() - time > 1000:
