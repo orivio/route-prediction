@@ -44,6 +44,10 @@ while gameloop:
     if keys[pygame.K_r]:
         route = ["HOME"]
 
+    for place in locations:
+        val = locations[place]
+        pygame.draw.rect(screen, (255, 255, 255), (val[0] - 50, val[1] - 50, val[0] + 50, val[1] + 50))
+
     clock.tick(30)
     if pygame.time.get_ticks() - time > 1000:
         time = pygame.time.get_ticks()
